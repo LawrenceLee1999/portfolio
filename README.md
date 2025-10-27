@@ -4,7 +4,7 @@ This is my personal portfolio site built with Next.js. It showcases my selected 
 
 ![Portfolio Screenshot](./public/portfolio-project.png)
 
-👉 [Live Demo](https://lawrencelee.dev)
+👉 [Live Demo](https://lawrencelee-portfolio.vercel.app/)
 
 ## Features
 
