@@ -25,7 +25,7 @@ export default function ProjectsSection() {
           description="Designed and developed a responsive portfolio site to showcase my projects, experience and skills."
           year="2025"
           role="Full-stack Developer"
-          liveUrl="https://lawrencelee.dev"
+          liveUrl="https://lawrencelee-portfolio.vercel.app/"
           githubUrl="https://github.com/LawrenceLee1999/portfolio"
           image="/portfolio-project.png"
         />
