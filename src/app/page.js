@@ -9,15 +9,17 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <ProjectsSection />
-      <AboutSection
-        showLink={true}
-        showButtons={false}
-        showPhoto={false}
-        showTechStack={false}
-      />
-      <ContactSection />
+      <main>
+        <Hero />
+        <ProjectsSection />
+        <AboutSection
+          showLink={true}
+          showButtons={false}
+          showPhoto={false}
+          showTechStack={false}
+        />
+        <ContactSection />
+      </main>
       <Footer />
     </>
   );

@@ -48,7 +48,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
             >
-              LIVE DEMO
+              LIVE DEMO <span className="sr-only">for {title}</span>
               <svg
                 className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform"
                 stroke="currentColor"

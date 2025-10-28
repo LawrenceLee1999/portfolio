@@ -90,8 +90,9 @@ export default function Hero() {
       <div className="aspect-[4/5] w-full max-w-[500px] flex justify-center">
         <img
           src="/lawrence.jpeg"
-          alt="Lawrence"
+          alt="Photo of Lawrence and coaches with player's player of the year award"
           className="w-full h-full rounded-[var(--radius-lg)] object-cover"
+          fetchPriority="high"
         />
       </div>
     </section>

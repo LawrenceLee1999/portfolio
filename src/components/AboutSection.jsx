@@ -115,7 +115,7 @@ export default function AboutSection({
       {showPhoto && (
         <img
           src="/10k-photo.jpeg"
-          alt="Photo of me, cammy and uncle Jake after 10k"
+          alt="Photo of me, cammy and uncle Jake after Glasgow 10k"
           className="w-full h-auto object-cover rounded-xl"
         />
       )}

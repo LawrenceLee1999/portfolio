@@ -8,14 +8,16 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <AboutSection
-        showLink={false}
-        showButtons={true}
-        showPhoto={true}
-        showTechStack={true}
-      />
-      <ExperienceSection />
-      <ContactSection />
+      <main>
+        <AboutSection
+          showLink={false}
+          showButtons={true}
+          showPhoto={true}
+          showTechStack={true}
+        />
+        <ExperienceSection />
+        <ContactSection />
+      </main>
       <Footer />
     </>
   );

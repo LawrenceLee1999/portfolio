@@ -33,8 +33,9 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="bg-[var(--color-background)] text-[var(--color-foreground)] antialiased">
-        {/* GLOBAL WRAPPER */}
-        <div className="w-full max-w-[1440px] mx-auto px-6">{children}</div>
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10">
+          {children}
+        </div>
       </body>
     </html>
   );

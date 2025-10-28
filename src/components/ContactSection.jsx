@@ -14,24 +14,33 @@ export default function ContactSection() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    if (res.ok) {
-      toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } else {
-      toast.error("Something went wrong.");
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.error || "Something went wrong.");
+      } else {
+        toast.success("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      }
+    } catch {
+      toast.error("Network error — please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
-
   return (
     <section
       id="contact"
@@ -64,6 +73,8 @@ export default function ContactSection() {
         <div className="flex justify-center md:justify-start gap-5 mt-5">
           <a
             href="https://www.linkedin.com/in/lawrence-lee-/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn profile"
             className="flex items-center justify-center"
           >
@@ -86,6 +97,8 @@ export default function ContactSection() {
           </a>
           <a
             href="https://github.com/LawrenceLee1999"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub profile"
             className="flex items-center justify-center"
           >
@@ -168,9 +181,14 @@ export default function ContactSection() {
           />
           <button
             type="submit"
-            className="mt-auto px-8 py-3 bg-[var(--color-accent)] text-black font-bold rounded-full cursor-pointer"
+            disabled={isSubmitting}
+            className={`mt-auto px-8 py-3 font-bold rounded-full cursor-pointer ${
+              isSubmitting
+                ? "bg-gray-500 text-black cursor-not-allowed"
+                : "bg-[var(--color-accent)] text-black"
+            }`}
           >
-            SUBMIT
+            {isSubmitting ? "Sending..." : "SUBMIT"}
           </button>
         </form>
       </div>
